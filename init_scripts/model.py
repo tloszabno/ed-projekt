@@ -113,7 +113,7 @@ class Course(object):
 
 class UserOnCourse(object):
     __tablename__="users_on_courses"
-    def __init__(self, raw_data_old_id, region, viewed, explored, certified, grade, registration_date, last_activity_date,number_of_interactions,number_of_activity_days,number_of_played_videos,number_of_chapters_interacted,number_of_post_in_forum):
+    def __init__(self, raw_data_old_id, region, viewed, explored, certified, grade, registration_date, last_activity_date,number_of_interactions,number_of_activity_days,number_of_played_videos,number_of_chapters_interacted,number_of_post_in_forum, user, course):
         self.id = users_on_courses_seq.next()
         self.raw_data_old_id = raw_data_old_id
         self.region_id = region.id if region else None
@@ -128,6 +128,8 @@ class UserOnCourse(object):
         self.number_of_played_videos = number_of_played_videos
         self.number_of_chapters_interacted = number_of_chapters_interacted
         self.number_of_post_in_forum = number_of_post_in_forum
+        self.user_id = user.id
+        self.course_id = course.id
 
 
 def load_cache_region(cursor):

@@ -1,0 +1,630 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"ca",
+				"cache_Region	statement"
+			],
+			[
+				"users",
+				"users_on_courses_cache	statement"
+			],
+			[
+				"co",
+				"courses_cache	statement"
+			],
+			[
+				"us",
+				"users_cache	statement"
+			],
+			[
+				"cach",
+				"cache_Genders	statement"
+			],
+			[
+				"user",
+				"user_on_course	statement"
+			],
+			[
+				"old",
+				"raw_data_old_id"
+			],
+			[
+				"cah",
+				"cache_Period	statement"
+			],
+			[
+				"U",
+				"UserOnCourse	class"
+			],
+			[
+				"g",
+				"cache_Genders	statement"
+			],
+			[
+				"u",
+				"User	class"
+			],
+			[
+				"cou",
+				"course_old_id	statement"
+			],
+			[
+				"ch",
+				"cache_University	statement"
+			],
+			[
+				"pe",
+				"cache_Period	statement"
+			],
+			[
+				"course",
+				"course_old_id	statement"
+			],
+			[
+				"__",
+				"__format_fields	function"
+			],
+			[
+				"User",
+				"UserOnCourse	class"
+			],
+			[
+				"number_",
+				"number_of_post_in_forum	statement"
+			],
+			[
+				"number",
+				"number_of_chapters_interacted"
+			],
+			[
+				"num",
+				"number_of_played_videos"
+			],
+			[
+				"raw",
+				"raw_data_old_id	statement"
+			],
+			[
+				"universi",
+				"univerisity_id	statement"
+			],
+			[
+				"lo",
+				"load_cache_region	function"
+			],
+			[
+				"region",
+				"region_name	statement"
+			],
+			[
+				"cac",
+				"cache_Region	statement"
+			],
+			[
+				"cache",
+				"cache_EducationLevel	statement"
+			],
+			[
+				"if",
+				"ifmain	if __name__ == '__main__'"
+			],
+			[
+				"Edu",
+				"EducationLevel	class"
+			],
+			[
+				"I",
+				"IdSeq	class"
+			],
+			[
+				"nex",
+				"next_id"
+			],
+			[
+				"id",
+				"id_sequence	statement"
+			],
+			[
+				"edu",
+				"education_level"
+			],
+			[
+				"sl",
+				"self	param"
+			],
+			[
+				"st",
+				"start_time_di"
+			],
+			[
+				"ex",
+				"execute"
+			],
+			[
+				"Cou",
+				"Course	class"
+			],
+			[
+				"is",
+				"institution"
+			],
+			[
+				"compare_",
+				"compare_and_update"
+			],
+			[
+				"file",
+				"field_name	forflow"
+			],
+			[
+				"final",
+				"final_cc_cname_di	statement"
+			],
+			[
+				"fine",
+				"final_cc_cname_di	statement"
+			],
+			[
+				"fin",
+				"final_cc_cname_di	statement"
+			],
+			[
+				"from",
+				"from_row"
+			],
+			[
+				"class",
+				"classmethod"
+			],
+			[
+				"in",
+				"institution"
+			],
+			[
+				"s",
+				"start_time_di"
+			],
+			[
+				"fi",
+				"final_cc_cname_di"
+			],
+			[
+				"C",
+				"CourseRow"
+			],
+			[
+				"row",
+				"row_id"
+			],
+			[
+				"c",
+				"cursor"
+			],
+			[
+				"crear",
+				"create_users_courses_table"
+			],
+			[
+				"crea",
+				"create_users_table"
+			],
+			[
+				"RAW_",
+				"RAW_DATA_CSV_FILE_PATH"
+			],
+			[
+				"con",
+				"connection"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "init_db.py",
+			"settings":
+			{
+				"buffer_size": 1972,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "create_new_schema.py",
+			"settings":
+			{
+				"buffer_size": 2363,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "new_import/create_model.py",
+			"settings":
+			{
+				"buffer_size": 3975,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "new_import/new_import.py",
+			"settings":
+			{
+				"buffer_size": 3292,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "new_import/db_actions.py",
+			"settings":
+			{
+				"buffer_size": 835,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "new_import/model.py",
+			"settings":
+			{
+				"buffer_size": 5005,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/home/tomek/ed",
+		"/home/tomek/ed/new_import"
+	],
+	"file_history":
+	[
+		"/home/tomek/ed/new_import/create_model.py",
+		"/home/tomek/ed/new_import/model.py",
+		"/home/tomek/ed/new_move.py",
+		"/home/tomek/ed/install.sh",
+		"/home/tomek/Pulpit/dane",
+		"/home/tomek/ed/test.py",
+		"/home/tomek/ed/select.py",
+		"/home/tomek/.config/sublime-text-3/Packages/User/Default (Linux).sublime-keymap",
+		"/home/tomek/ed/data-raw.csv"
+	],
+	"find":
+	{
+		"height": 23.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"next_id",
+			" \",",
+			",",
+			"DROP TABLE IF EXISTS users_courses;",
+			")\n",
+			",",
+			"15s",
+			"'\n"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 3,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "init_db.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1972,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								516,
+								516
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "create_new_schema.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2363,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								234,
+								234
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "new_import/create_model.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3975,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3975,
+								3975
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 270.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "new_import/new_import.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3292,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1826,
+								1826
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 630.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "new_import/db_actions.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 835,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								669,
+								669
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 5,
+					"file": "new_import/model.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5005,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1206,
+								1206
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			0.5,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"project": "ed.sublime-project",
+	"replace":
+	{
+		"height": 42.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

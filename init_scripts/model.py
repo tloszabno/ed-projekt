@@ -49,7 +49,7 @@ class Period(object):
 
 cache_Genders = {
     "m": Gender("Male"),
-    "w": Gender("Female"),
+    "f": Gender("Female"),
     "o": Gender("Other")
 }
 

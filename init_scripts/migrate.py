@@ -61,7 +61,7 @@ try:
         number_of_chapters_interacted = row[17]
         number_of_post_in_forum = row[18]
 
-        user_on_course = model.UserOnCourse(raw_data_old_id, region, viewed, explored, certified, grade, registration_date, last_activity_date, number_of_interactions, number_of_activity_days, number_of_played_videos, number_of_chapters_interacted, number_of_post_in_forum)
+        user_on_course = model.UserOnCourse(raw_data_old_id, region, viewed, explored, certified, grade, registration_date, last_activity_date, number_of_interactions, number_of_activity_days, number_of_played_videos, number_of_chapters_interacted, number_of_post_in_forum, user, course)
 
         users_on_courses_cache[raw_data_old_id] = user_on_course
 

@@ -137,7 +137,7 @@ CREATE TABLE users_on_courses
 (
     id serial NOT NULL,
     course_id integer REFERENCES courses(id),
-    userid_di integer REFERENCES users(id),
+    user_id integer REFERENCES users(id),
     raw_data_old_id integer REFERENCES raw_data(id),
     region_id integer REFERENCES regions(id),
     viewed integer,

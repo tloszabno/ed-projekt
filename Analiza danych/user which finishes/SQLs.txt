@@ -1,0 +1,33 @@
+-- users - region -> certified
+SELECT regions.name, count(region_id) AS qty 
+FROM users_on_courses JOIN regions ON users_on_courses.region_id=regions.id 
+WHERE certified = 0
+GROUP BY region_id, regions.name
+ORDER BY qty DESC;
+
+-- users - YoB -> certified
+SELECT year_of_birth, count(year_of_birth) AS qty
+FROM users_on_courses
+JOIN users ON user_id=users.id
+WHERE certified = 0
+GROUP BY year_of_birth
+ORDER BY qty DESC;
+
+
+
+-- users - played_videos -> certified
+SELECT number_of_played_videos, count(number_of_played_videos) 
+FROM users_on_courses
+WHERE certified = 1
+GROUP BY(number_of_played_videos)
+ORDER BY number_of_played_videos;
+
+SELECT AVG(number_of_played_videos)
+FROM users_on_courses
+WHERE number_of_played_videos IS NOT NULL AND certified = 1
+ORDER BY number_of_played_videos DESC
+
+SELECT number_of_played_videos
+FROM users_on_courses
+WHERE number_of_played_videos IS NOT NULL AND certified = 1
+ORDER BY number_of_played_videos DESC

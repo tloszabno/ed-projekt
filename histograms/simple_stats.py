@@ -12,12 +12,12 @@ def all_records(cursor):
 def null_statistics(cursor):
     print "#### Null statistics ####"
     all_num = all_records(cursor)
-    columns = ['gender', 'viewed', 'explored']
+    columns = ['gender', 'final_cc_cname_di', 'loe_di', 'yob', 'grade', 'roles']
     for col in columns:
         query = "SELECT count(*) from raw_data where " + col + " is null OR " + col + " = 'NA'"
         cursor.execute(query)
         null_count = cursor.fetchone()[0]  
-        print "%s nulls = %s%%" % (col, str( round((float(null_count)*100.0/float(all_num)), 3)))
+        print "{:30s} {:7s}%".format(col, str( round((float(null_count)*100.0/float(all_num)), 3)))
     print "############"
 
 

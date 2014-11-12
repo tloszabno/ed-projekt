@@ -201,8 +201,16 @@ def get_education_level_stats_dict(cursor):
     result = cursor.fetchall()
     return dict(result)
 
+def get_users_with_grade_over(cursor, grade):
+    query = """
+    select distinct user_id from users_on_courses
+    where grade_normalized >= %f 
+    """ % (grade-0.01)
+    cursor.execute(query)
+    return [x[0] for x in cursor.fetchall()]
 
-def print_user_characteristic(user_list):
+
+def print_user_characteristic(cursor, user_list):
     males_in_courses = how_many_users_are_in_given_gender(cursor, "Male")
     females_in_courses = how_many_users_are_in_given_gender(cursor, "Female")
 
@@ -216,10 +224,10 @@ def print_user_characteristic(user_list):
     for ed_stat in get_users_gender_stats(cursor, user_list):
         print "\t %s  ->  %d osób,\t %f%% wszystkich" % (ed_stat[0], ed_stat[1], (ed_stat[1]*100.0 / males_in_courses if ed_stat[0] == "Male" else ed_stat[1]*100.0 / females_in_courses ))
 
-    print " # Rok urodzenia użytkowników: (Top5)"
+#    print " # Rok urodzenia użytkowników: (Top5)"
 
-    for ed_stat in get_users_years_of_birth_stats(cursor, user_list, top=5):
-        print "\t %s  ->  %d osób" % (ed_stat[0], ed_stat[1])
+#   for ed_stat in get_users_years_of_birth_stats(cursor, user_list, top=5):
+#        print "\t %s  ->  %d osób" % (ed_stat[0], ed_stat[1])
 
 
 connection = None
@@ -266,17 +274,21 @@ try:
     print " # Stosunek powyższych %f%%" % (avg_passed_courses*100.0/avg_signedup_courses)
 
     print "\n@ Charakterytyka użytkowników, którzy skończyli najwięcej (%d) kursów:" % max_passed_courses
-    print_user_characteristic(users_passed_max_courses)
+    print_user_characteristic(cursor, users_passed_max_courses)
 
     print "\n@ Charakterytyka użytkowników, którzy nie skończyli żadnego kursu: " 
     users_with_not_passed_any_course = get_users_not_finished_any_course(cursor)
-    print_user_characteristic(users_with_not_passed_any_course)
+    print_user_characteristic(cursor, users_with_not_passed_any_course)
     
     print "\n@ Charakterytyka użytkowników, którzy skończyli choć jeden kurs: " 
-    print_user_characteristic(get_users_finished_at_least_one_course(cursor))
+    print_user_characteristic(cursor, get_users_finished_at_least_one_course(cursor))
     
 
+    users_with_5 = get_users_with_grade_over(cursor, 5.0)
 
+    print "\n@ Charakterytyka użytkowników, którzy mają 5.0 z przynajmniej jednego kursu: " 
+    print_user_characteristic(cursor, users_with_5)
+    
 
     print ""
     connection.commit()

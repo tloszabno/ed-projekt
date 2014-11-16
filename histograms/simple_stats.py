@@ -209,6 +209,14 @@ def get_users_with_grade_over(cursor, grade):
     cursor.execute(query)
     return [x[0] for x in cursor.fetchall()]
 
+def get_users_with_grade(cursor, grade_from, grade_to):
+    query = """
+    select distinct user_id from users_on_courses
+    where grade_normalized <= %f and grade_normalized >= %f 
+    """ % ((grade_to+0.01), (grade_from-0.01))
+    cursor.execute(query)
+    return [x[0] for x in cursor.fetchall()]
+
 
 def print_user_characteristic(cursor, user_list):
     males_in_courses = how_many_users_are_in_given_gender(cursor, "Male")
@@ -288,7 +296,11 @@ try:
 
     print "\n@ Charakterytyka użytkowników, którzy mają 5.0 z przynajmniej jednego kursu: " 
     print_user_characteristic(cursor, users_with_5)
-    
+
+    print "\n@ Charakterytyka użytkowników, którzy mają 3.0 z przynajmniej jednego kursu: " 
+    print_user_characteristic(cursor, get_users_with_grade(cursor, 3.0, 3.0))
+
+        
 
     print ""
     connection.commit()

@@ -20,6 +20,16 @@ try:
     if not exists:
         cursor.execute("ALTER TABLE users_on_courses ADD COLUMN grade_normalized real NULL")
 
+
+    cursor.execute("SELECT column_name FROM information_schema.columns WHERE table_name='users_on_courses' and column_name='number_of_played_videos_normalized'" )
+    exists = len(cursor.fetchall()) > 0
+    if not exists:
+        cursor.execute("ALTER TABLE users_on_courses ADD COLUMN number_of_played_videos_normalized integer NULL")
+
+
+
+
+
     # next additions ...
 
 

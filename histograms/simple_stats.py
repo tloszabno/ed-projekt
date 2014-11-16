@@ -217,6 +217,27 @@ def get_users_with_grade(cursor, grade_from, grade_to):
     cursor.execute(query)
     return [x[0] for x in cursor.fetchall()]
 
+def print_relation_between_played_videos_and_grade(cursor):
+    users_with_grade_5 = get_users_with_grade(cursor, 5.0, 5.0)
+    sum_of_played_videos = 0
+    for user_id in users_with_grade_5[:10]:
+        cursor.execute("select avg(number_of_played_videos_normalized) from users_on_courses where user_id = %s", (user_id,))
+        sum_of_played_videos += cursor.fetchone()[0]
+    avg_of_played_videos = sum_of_played_videos / len(users_with_grade_5)   
+    print "\n\n* Użytkownikownicy, którzy mieli ocenę 5.0 choć z jednego z kursów, średnio odworzyli %f %% możliwych" % (avg_of_played_videos*10)
+
+    users_with_grade_2 = get_users_with_grade(cursor, 2.0, 2.0)
+    sum_of_played_videos = 0
+    for user_id in users_with_grade_2:
+        cursor.execute("select avg(number_of_played_videos_normalized) from users_on_courses where user_id = %s", (user_id,))
+        sum_of_played_videos += cursor.fetchone()[0]
+
+    avg_of_played_videos = sum_of_played_videos / len(users_with_grade_2)   
+    print "\n\n* Użytkownikownicy, którzy mieli ocenę 2.0 choć z jednego z kursów, średnio odworzyli %d %% możliwych" % (avg_of_played_videos*10)
+
+
+
+
 
 def print_user_characteristic(cursor, user_list):
     males_in_courses = how_many_users_are_in_given_gender(cursor, "Male")
@@ -224,13 +245,12 @@ def print_user_characteristic(cursor, user_list):
 
     education_levels_stats = get_education_level_stats_dict(cursor)
 
-    print " # Poziomy edukacji użytkowników: "
+    print ""
     for ed_stat in get_users_education_level_stats(cursor, user_list):
-        print "\t %s  ->  %d osób,\t %f%% wszystkich" % (ed_stat[0], ed_stat[1],( ed_stat[1]*100.0 / education_levels_stats[ed_stat[0]]) )
-
-    print " # Płeć użytkowników: "
+        print "\t|| %s  ||  %d osób ||\t %f%% wszystkich ||" % (ed_stat[0], ed_stat[1],( ed_stat[1]*100.0 / education_levels_stats[ed_stat[0]]) )
+    print ""
     for ed_stat in get_users_gender_stats(cursor, user_list):
-        print "\t %s  ->  %d osób,\t %f%% wszystkich" % (ed_stat[0], ed_stat[1], (ed_stat[1]*100.0 / males_in_courses if ed_stat[0] == "Male" else ed_stat[1]*100.0 / females_in_courses ))
+        print "\t|| %s  ||  %d osób ||\t %f%% wszystkich ||" % (ed_stat[0], ed_stat[1], (ed_stat[1]*100.0 / males_in_courses if ed_stat[0] == "Male" else ed_stat[1]*100.0 / females_in_courses ))
 
 #    print " # Rok urodzenia użytkowników: (Top5)"
 
@@ -252,55 +272,58 @@ try:
     males_in_courses = how_many_users_are_in_given_gender(cursor, "Male")
     females_in_courses = how_many_users_are_in_given_gender(cursor, "Female")
 
-
-    print " # Kobiet:    %d " % females_in_courses
-    print " # Meżczyzn:  %d"  % males_in_courses
+    print "\n=== W ilu kursach brali udział użytkownicy ===\n"
+    print "|| Kobiet  ||  %d " % females_in_courses
+    print "|| Meżczyzn ||  %d"  % males_in_courses
 
     print ""
-    print " # %d użytkowników zapisało się na wszystkie(16) kursy" % how_many_users_was_in_all_courses(cursor)
-    print " # %d użytkowników skończyło 16cie kursów" %  how_many_users_passed_all_courses(cursor)
-    print " # %d użytkowników nie skończyło żadnego kursu, na który się zapisało" % how_many_users_not_finished_any_course(cursor)
+    print "* %d użytkowników zapisało się na wszystkie(16) kursy" % how_many_users_was_in_all_courses(cursor)
+    print "* %d użytkowników skończyło 16cie kursów" %  how_many_users_passed_all_courses(cursor)
+    print "* %d użytkowników nie skończyło żadnego kursu, na który się zapisało" % how_many_users_not_finished_any_course(cursor)
 
     max_passed_courses = what_is_the_max_in_passed_courses_per_user(cursor)
-    print " # %d kursów było maksimum ukończonym przez jedną osobę" % max_passed_courses
+    print "* %d kursów było maksimum ukończonym przez jedną osobę" % max_passed_courses
 
     users_signedup_to_all_courses = get_users_signuped_in_all_courses(cursor)
-    print " # użytkownicy, który zapisali się na wszystkie(16) kursy " + str(users_signedup_to_all_courses)
+    print "* użytkownicy, który zapisali się na wszystkie(16) kursy " + str(users_signedup_to_all_courses)
 
     users_passed_max_courses = get_users_which_passed_max_courses(cursor, max_passed_courses)
-    print (" # użytkownicy, którzy skończyli %d kursów " % max_passed_courses )+ str(users_passed_max_courses)
+    print ("* użytkownicy, którzy skończyli %d kursów " % max_passed_courses )+ str(users_passed_max_courses)
 
     users_signed_up_for_all_courses_and_in_max_passed = [ u for u in users_signedup_to_all_courses if u in users_passed_max_courses ]
-    print " # użytkonicy wspólni dla powyższych dwóch zbiorów " + str(users_signed_up_for_all_courses_and_in_max_passed)
+    print "* użytkonicy wspólni dla powyższych dwóch zbiorów " + str(users_signed_up_for_all_courses_and_in_max_passed)
 
     avg_passed_courses = how_many_courses_passed_user_avg(cursor)
-    print " # %f średnio kursów kończyli użytkownicy " % avg_passed_courses
+    print "* %f średnio kursów kończyli użytkownicy " % avg_passed_courses
 
     avg_signedup_courses = how_many_courses_signedup_user_avg(cursor)
-    print " # Na %f średnio kursów byli zapisani użytkownicy " % avg_signedup_courses
+    print "* Na %f średnio kursów byli zapisani użytkownicy " % avg_signedup_courses
 
-    print " # Stosunek powyższych %f%%" % (avg_passed_courses*100.0/avg_signedup_courses)
+    print "* Stosunek powyższych %f%%" % (avg_passed_courses*100.0/avg_signedup_courses)
 
-    print "\n@ Charakterytyka użytkowników, którzy skończyli najwięcej (%d) kursów:" % max_passed_courses
+
+    print "\n=== Charakterystyki użytkowników ===\n"
+    print "\n* Charakterytyka użytkowników, którzy skończyli najwięcej (%d) kursów:" % max_passed_courses
     print_user_characteristic(cursor, users_passed_max_courses)
 
-    print "\n@ Charakterytyka użytkowników, którzy nie skończyli żadnego kursu: " 
+    print "\n* Charakterytyka użytkowników, którzy nie skończyli żadnego kursu: " 
     users_with_not_passed_any_course = get_users_not_finished_any_course(cursor)
     print_user_characteristic(cursor, users_with_not_passed_any_course)
     
-    print "\n@ Charakterytyka użytkowników, którzy skończyli choć jeden kurs: " 
+    print "\n* Charakterytyka użytkowników, którzy skończyli choć jeden kurs: " 
     print_user_characteristic(cursor, get_users_finished_at_least_one_course(cursor))
     
 
     users_with_5 = get_users_with_grade_over(cursor, 5.0)
 
-    print "\n@ Charakterytyka użytkowników, którzy mają 5.0 z przynajmniej jednego kursu: " 
+    print "\n* Charakterytyka użytkowników, którzy mają 5.0 z przynajmniej jednego kursu: " 
     print_user_characteristic(cursor, users_with_5)
 
-    print "\n@ Charakterytyka użytkowników, którzy mają 3.0 z przynajmniej jednego kursu: " 
+    print "\n* Charakterytyka użytkowników, którzy mają 3.0 z przynajmniej jednego kursu: " 
     print_user_characteristic(cursor, get_users_with_grade(cursor, 3.0, 3.0))
 
-        
+    print "\n\n=== Zależność od oglądniętych materiałów wideo==="
+    print_relation_between_played_videos_and_grade(cursor)  
 
     print ""
     connection.commit()

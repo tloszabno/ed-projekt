@@ -219,21 +219,17 @@ def get_users_with_grade(cursor, grade_from, grade_to):
 
 def print_relation_between_played_videos_and_grade(cursor):
     users_with_grade_5 = get_users_with_grade(cursor, 5.0, 5.0)
-    sum_of_played_videos = 0
-    for user_id in users_with_grade_5[:10]:
-        cursor.execute("select avg(number_of_played_videos_normalized) from users_on_courses where user_id = %s", (user_id,))
-        sum_of_played_videos += cursor.fetchone()[0]
-    avg_of_played_videos = sum_of_played_videos / len(users_with_grade_5)   
-    print "\n\n* Użytkownikownicy, którzy mieli ocenę 5.0 choć z jednego z kursów, średnio odworzyli %f %% możliwych" % (avg_of_played_videos*10)
+
+    cursor.execute("select avg(number_of_played_videos_normalized) from users_on_courses where user_id in (%s)" % (list_as_csv(users_with_5)))
+    avg_of_played_videos = cursor.fetchone()[0]
+    print "\n\n* Użytkownicy, którzy mieli ocenę 5.0 choć z jednego z kursów, średnio odworzyli %f%% możliwych wideo" % (avg_of_played_videos*10)
+
 
     users_with_grade_2 = get_users_with_grade(cursor, 2.0, 2.0)
-    sum_of_played_videos = 0
-    for user_id in users_with_grade_2:
-        cursor.execute("select avg(number_of_played_videos_normalized) from users_on_courses where user_id = %s", (user_id,))
-        sum_of_played_videos += cursor.fetchone()[0]
-
-    avg_of_played_videos = sum_of_played_videos / len(users_with_grade_2)   
-    print "\n\n* Użytkownikownicy, którzy mieli ocenę 2.0 choć z jednego z kursów, średnio odworzyli %d %% możliwych" % (avg_of_played_videos*10)
+    cursor.execute("select avg(number_of_played_videos_normalized) from users_on_courses where user_id in (%s)" % (list_as_csv(users_with_grade_2)))
+    avg_of_played_videos = cursor.fetchone()[0]
+   
+    print "\n\n* Użytkownicy, którzy mieli ocenę 2.0 choć z jednego z kursów, średnio odworzyli %f%% możliwych wideo" % (avg_of_played_videos*10)
 
 
 
@@ -322,7 +318,7 @@ try:
     print "\n* Charakterytyka użytkowników, którzy mają 3.0 z przynajmniej jednego kursu: " 
     print_user_characteristic(cursor, get_users_with_grade(cursor, 3.0, 3.0))
 
-    print "\n\n=== Zależność od oglądniętych materiałów wideo==="
+    print "\n\n=== Zależność ilości odtworzonych materiałów wideo od ocen==="
     print_relation_between_played_videos_and_grade(cursor)  
 
     print ""

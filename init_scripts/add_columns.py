@@ -27,10 +27,18 @@ try:
         cursor.execute("ALTER TABLE users_on_courses ADD COLUMN number_of_played_videos_normalized integer NULL")
 
 
+    cursor.execute("SELECT column_name FROM information_schema.columns WHERE table_name='users_on_courses' and column_name='number_of_interactions_normalized'" )
+    exists = len(cursor.fetchall()) > 0
+    if not exists:
+        log("Adding number_of_interactions_normalized")
+        cursor.execute("ALTER TABLE users_on_courses ADD COLUMN number_of_interactions_normalized real NULL")
 
 
-
-    # next additions ...
+    cursor.execute("SELECT column_name FROM information_schema.columns WHERE table_name='users_on_courses' and column_name='number_of_activity_days_normalized'" )
+    exists = len(cursor.fetchall()) > 0
+    if not exists:
+        log("Adding number_of_activity_days_normalized")
+        cursor.execute("ALTER TABLE users_on_courses ADD COLUMN number_of_activity_days_normalized real NULL")
 
 
     connection.commit()

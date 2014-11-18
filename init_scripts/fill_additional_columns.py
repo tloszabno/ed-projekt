@@ -47,21 +47,50 @@ def fill_grade_normalized(cursor):
 ###
 ########
 
-
-def get_max_played_videos_foreach_course(cursor):
+def get_max_value_foreach_course(cursor, column_name):
     query_1 = """ select id from courses """
     cursor.execute(query_1)
     courses_ids = [x[0] for x in cursor.fetchall()]
     maxes = {}
     for cid in courses_ids:
-        cursor.execute("select max(number_of_played_videos) from users_on_courses where course_id = %s", (cid,))
+        cursor.execute("select max({}) from users_on_courses where course_id = {}".format(column_name, cid))
         maxc = cursor.fetchone()[0]
         maxes[cid] = maxc
     return maxes
 
+def get_max_played_videos_foreach_course(cursor):
+    return get_max_value_foreach_course(cursor, "number_of_played_videos")
 
+def get_max_interactions_foreach_course(cursor):
+    return get_max_value_foreach_course(cursor, "number_of_interactions")
 
+def get_max_number_of_activity_days_foreach_course(cursor):    
+    return get_max_value_foreach_course(cursor, "number_of_activity_days")
 
+def normalize_value(value, max_):
+    if not value: return 0
+    normalized = int((value * 10.0 )/ max_) if max_ else 0
+    return normalized if normalized > 0 else 1 if max_ else 0
+
+def fill_column_with_normalized_data(old_column, new_column, cursor):
+    log("Filling {}".format(new_column))
+
+    courses_max = get_max_value_foreach_course(cursor, old_column)
+    cursor.execute("select id,course_id, {} from users_on_courses".format(old_column))
+    for row in cursor.fetchall():
+        id = row[0]
+        course_id = row[1]
+        num = row[2]
+        normalized = normalize_value(num, courses_max[course_id])
+        cursor.execute("UPDATE users_on_courses SET {} = {} where id = {}".format(new_column, normalized, id))
+
+    log("DONE")
+
+def fill_number_of_interactions_normalized(cursor):
+    fill_column_with_normalized_data("number_of_interactions" ,"number_of_interactions_normalized", cursor)
+    
+def fill_number_of_activity_days_normalized(cursor):    
+    fill_column_with_normalized_data("number_of_activity_days", "number_of_activity_days_normalized", cursor)
 
 def fill_number_of_played_videos_normalized(cursor):
     def normalize(course_id, num_of_playes, courses_max):
@@ -93,7 +122,9 @@ try:
     cursor = connection.cursor()
 
     #fill_grade_normalized(cursor)
-    fill_number_of_played_videos_normalized(cursor)
+    #fill_number_of_played_videos_normalized(cursor)
+    fill_number_of_interactions_normalized(cursor)
+    fill_number_of_activity_days_normalized(cursor)
 
     connection.commit()
 finally:

@@ -1,0 +1,218 @@
+Frequent patterns Results:
+
+parameter specification:
+ tidLists support minlen maxlen            target   ext
+     TRUE     0.3      4     10 frequent itemsets FALSE
+
+Input Data:
+"SELECT region_id, viewed, explored, grade_normalized, number_of_played_videos_normalized, number_of_interactions_normalized, number_of_activity_days_normalized FROM users_on_courses WHERE certified=0 "
+	 
+	 
+Results for rows where certified = 1
+
+  items                                    support
+1 {viewed=1,                                      
+   explored=1,                                    
+   number_of_played_videos_normalized=1,          
+   number_of_interactions_normalized=1,           
+   number_of_activity_days_normalized=1} 0.7201334
+2 {viewed=1,                                      
+   number_of_played_videos_normalized=1,          
+   number_of_interactions_normalized=1,           
+   number_of_activity_days_normalized=1} 0.7295754
+3 {explored=1,                                    
+   number_of_played_videos_normalized=1,          
+   number_of_interactions_normalized=1,           
+   number_of_activity_days_normalized=1} 0.7201334
+4 {viewed=1,                                      
+   explored=1,                                    
+   number_of_interactions_normalized=1,           
+   number_of_activity_days_normalized=1} 0.7201334
+5 {viewed=1,                                      
+   explored=1,                                    
+   number_of_played_videos_normalized=1,          
+   number_of_activity_days_normalized=1} 0.7201334
+6 {viewed=1,                                      
+   explored=1,                                    
+   number_of_played_videos_normalized=1,          
+   number_of_interactions_normalized=1}  0.7201334
+
+
+
+
+
+
+
+
+
+
+Results for rows where certified = 0
+
+	    items                                    support
+1  {viewed=0,                                      
+    explored=0,                                    
+    grade_normalized=2,                            
+    number_of_played_videos_normalized=0,          
+    number_of_interactions_normalized=0,           
+    number_of_activity_days_normalized=0} 0.3861442
+2  {viewed=0,                                      
+    grade_normalized=2,                            
+    number_of_played_videos_normalized=0,          
+    number_of_interactions_normalized=0,           
+    number_of_activity_days_normalized=0} 0.3861571
+3  {viewed=0,                                      
+    explored=0,                                    
+    number_of_played_videos_normalized=0,          
+    number_of_interactions_normalized=0,           
+    number_of_activity_days_normalized=0} 0.3861442
+4  {viewed=0,                                      
+    explored=0,                                    
+    grade_normalized=2,                            
+    number_of_interactions_normalized=0,           
+    number_of_activity_days_normalized=0} 0.3861442
+5  {viewed=0,                                      
+    grade_normalized=2,                            
+    number_of_interactions_normalized=0,           
+    number_of_activity_days_normalized=0} 0.3861571
+6  {viewed=0,                                      
+    explored=0,                                    
+    number_of_interactions_normalized=0,           
+    number_of_activity_days_normalized=0} 0.3861442
+7  {viewed=0,                                      
+    number_of_played_videos_normalized=0,          
+    number_of_interactions_normalized=0,           
+    number_of_activity_days_normalized=0} 0.3861571
+8  {viewed=0,                                      
+    explored=0,                                    
+    grade_normalized=2,                            
+    number_of_played_videos_normalized=0,          
+    number_of_activity_days_normalized=0} 0.3861442
+9  {viewed=0,                                      
+    grade_normalized=2,                            
+    number_of_played_videos_normalized=0,          
+    number_of_activity_days_normalized=0} 0.3861571
+10 {viewed=0,                                      
+    explored=0,                                    
+    number_of_played_videos_normalized=0,          
+    number_of_activity_days_normalized=0} 0.3861442
+11 {viewed=0,                                      
+    explored=0,                                    
+    grade_normalized=2,                            
+    number_of_activity_days_normalized=0} 0.3861442
+12 {viewed=0,                                      
+    explored=0,                                    
+    grade_normalized=2,                            
+    number_of_played_videos_normalized=0,          
+    number_of_interactions_normalized=0}  0.3861442
+13 {viewed=0,                                      
+    grade_normalized=2,                            
+    number_of_played_videos_normalized=0,          
+    number_of_interactions_normalized=0}  0.3861571
+14 {viewed=0,                                      
+    explored=0,                                    
+    number_of_played_videos_normalized=0,          
+    number_of_interactions_normalized=0}  0.3861442
+15 {viewed=0,                                      
+    explored=0,                                    
+    grade_normalized=2,                            
+    number_of_interactions_normalized=0}  0.3861442
+16 {viewed=0,                                      
+    explored=0,                                    
+    grade_normalized=2,                            
+    number_of_played_videos_normalized=0} 0.3861442
+17 {viewed=1,                                      
+    explored=0,                                    
+    grade_normalized=2,                            
+    number_of_played_videos_normalized=0,          
+    number_of_interactions_normalized=0,           
+    number_of_activity_days_normalized=0} 0.3212763
+18 {viewed=1,                                      
+    grade_normalized=2,                            
+    number_of_played_videos_normalized=0,          
+    number_of_interactions_normalized=0,           
+    number_of_activity_days_normalized=0} 0.3403106
+19 {viewed=1,                                      
+    explored=0,                                    
+    number_of_played_videos_normalized=0,          
+    number_of_interactions_normalized=0,           
+    number_of_activity_days_normalized=0} 0.3213901
+20 {viewed=1,                                      
+    explored=0,                                    
+    grade_normalized=2,                            
+    number_of_interactions_normalized=0,           
+    number_of_activity_days_normalized=0} 0.3212763
+21 {viewed=1,                                      
+    grade_normalized=2,                            
+    number_of_interactions_normalized=0,           
+    number_of_activity_days_normalized=0} 0.3403106
+22 {viewed=1,                                      
+    explored=0,                                    
+    number_of_interactions_normalized=0,           
+    number_of_activity_days_normalized=0} 0.3213901
+23 {viewed=1,                                      
+    number_of_played_videos_normalized=0,          
+    number_of_interactions_normalized=0,           
+    number_of_activity_days_normalized=0} 0.3406827
+24 {viewed=1,                                      
+    explored=0,                                    
+    grade_normalized=2,                            
+    number_of_played_videos_normalized=0,          
+    number_of_activity_days_normalized=0} 0.3212763
+25 {viewed=1,                                      
+    grade_normalized=2,                            
+    number_of_played_videos_normalized=0,          
+    number_of_activity_days_normalized=0} 0.3403106
+26 {viewed=1,                                      
+    explored=0,                                    
+    number_of_played_videos_normalized=0,          
+    number_of_activity_days_normalized=0} 0.3213901
+27 {viewed=1,                                      
+    explored=0,                                    
+    grade_normalized=2,                            
+    number_of_activity_days_normalized=0} 0.3212763
+28 {viewed=1,                                      
+    explored=0,                                    
+    grade_normalized=2,                            
+    number_of_played_videos_normalized=0,          
+    number_of_interactions_normalized=0}  0.3212763
+29 {viewed=1,                                      
+    grade_normalized=2,                            
+    number_of_played_videos_normalized=0,          
+    number_of_interactions_normalized=0}  0.3403106
+30 {viewed=1,                                      
+    explored=0,                                    
+    number_of_played_videos_normalized=0,          
+    number_of_interactions_normalized=0}  0.3213901
+31 {viewed=1,                                      
+    explored=0,                                    
+    grade_normalized=2,                            
+    number_of_interactions_normalized=0}  0.3212763
+32 {viewed=1,                                      
+    explored=0,                                    
+    grade_normalized=2,                            
+    number_of_played_videos_normalized=0} 0.3212763
+33 {explored=0,                                    
+    grade_normalized=2,                            
+    number_of_played_videos_normalized=0,          
+    number_of_interactions_normalized=0,           
+    number_of_activity_days_normalized=0} 0.7074205
+34 {grade_normalized=2,                            
+    number_of_played_videos_normalized=0,          
+    number_of_interactions_normalized=0,           
+    number_of_activity_days_normalized=0} 0.7264677
+35 {explored=0,                                    
+    number_of_played_videos_normalized=0,          
+    number_of_interactions_normalized=0,           
+    number_of_activity_days_normalized=0} 0.7075344
+36 {explored=0,                                    
+    grade_normalized=2,                            
+    number_of_interactions_normalized=0,           
+    number_of_activity_days_normalized=0} 0.7074205
+37 {explored=0,                                    
+    grade_normalized=2,                            
+    number_of_played_videos_normalized=0,          
+    number_of_activity_days_normalized=0} 0.7074205
+38 {explored=0,                                    
+    grade_normalized=2,                            
+    number_of_played_videos_normalized=0,          
+    number_of_interactions_normalized=0}  0.7074205

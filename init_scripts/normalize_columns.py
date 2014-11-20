@@ -69,7 +69,7 @@ def get_max_number_of_activity_days_foreach_course(cursor):
 
 def normalize_value(value, max_):
     if not value: return 0
-    normalized = int((value * 10.0 )/ max_) if max_ else 0
+    normalized = int((value * 100.0 )/ max_) if max_ else 0
     return normalized if normalized > 0 else 1 if max_ else 0
 
 def fill_column_with_normalized_data(old_column, new_column, cursor):
@@ -84,7 +84,7 @@ def fill_column_with_normalized_data(old_column, new_column, cursor):
         normalized = normalize_value(num, courses_max[course_id])
         cursor.execute("UPDATE users_on_courses SET {} = {} where id = {}".format(new_column, normalized, id))
 
-    log("DONE")
+    log(" -> [DONE]")
 
 def fill_number_of_interactions_normalized(cursor):
     fill_column_with_normalized_data("number_of_interactions" ,"number_of_interactions_normalized", cursor)
@@ -96,7 +96,7 @@ def fill_number_of_played_videos_normalized(cursor):
     def normalize(course_id, num_of_playes, courses_max):
         if not num_of_playes: return 0
         max_for_course = courses_max[course_id]
-        normalized = int((num_of_playes * 10.0 )/ max_for_course) if max_for_course else 0
+        normalized = int((num_of_playes * 100.0 )/ max_for_course) if max_for_course else 0
         return normalized if normalized > 0 else 1 if max_for_course else 0
 
     log("Filling number_of_played_videos_normalized...")
@@ -110,7 +110,7 @@ def fill_number_of_played_videos_normalized(cursor):
         normalized = normalize(course_id, num, courses_max)
         cursor.execute("UPDATE users_on_courses SET number_of_played_videos_normalized = %s where id = %s", (normalized, id))
 
-    log("Filling number_of_played_videos_normalized....[OK]")
+    log(" -> [DONE]")
 
 
 connection = None
@@ -122,7 +122,7 @@ try:
     cursor = connection.cursor()
 
     #fill_grade_normalized(cursor)
-    #fill_number_of_played_videos_normalized(cursor)
+    fill_number_of_played_videos_normalized(cursor)
     fill_number_of_interactions_normalized(cursor)
     fill_number_of_activity_days_normalized(cursor)
 

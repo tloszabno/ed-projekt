@@ -15,9 +15,12 @@ try:
 
     cursor = connection.cursor()
 
+
+    # NORMALIZATION
     cursor.execute("SELECT column_name FROM information_schema.columns WHERE table_name='users_on_courses' and column_name='grade_normalized'" )
     exists = len(cursor.fetchall()) > 0
     if not exists:
+        log("Adding grade_normalized")
         cursor.execute("ALTER TABLE users_on_courses ADD COLUMN grade_normalized real NULL")
 
 
@@ -39,6 +42,29 @@ try:
     if not exists:
         log("Adding number_of_activity_days_normalized")
         cursor.execute("ALTER TABLE users_on_courses ADD COLUMN number_of_activity_days_normalized real NULL")
+
+
+    #CATEGORIZATION
+    cursor.execute("SELECT column_name FROM information_schema.columns WHERE table_name='users_on_courses' and column_name='number_of_played_videos_categorized'" )
+    exists = len(cursor.fetchall()) > 0
+    if not exists:
+        log("Adding number_of_played_videos_categorized")
+        cursor.execute("ALTER TABLE users_on_courses ADD COLUMN number_of_played_videos_categorized character varying(20) NULL")
+
+
+    cursor.execute("SELECT column_name FROM information_schema.columns WHERE table_name='users_on_courses' and column_name='number_of_interactions_categorized'" )
+    exists = len(cursor.fetchall()) > 0
+    if not exists:
+        log("Adding number_of_interactions_categorized")
+        cursor.execute("ALTER TABLE users_on_courses ADD COLUMN number_of_interactions_categorized character varying(20) NULL")
+
+
+    cursor.execute("SELECT column_name FROM information_schema.columns WHERE table_name='users_on_courses' and column_name='number_of_activity_days_categorized'" )
+    exists = len(cursor.fetchall()) > 0
+    if not exists:
+        log("Adding number_of_activity_days_categorized")
+        cursor.execute("ALTER TABLE users_on_courses ADD COLUMN number_of_activity_days_categorized character varying(20) NULL")
+
 
 
     connection.commit()

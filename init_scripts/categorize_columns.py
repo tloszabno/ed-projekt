@@ -62,7 +62,24 @@ try:
             old_value = row[1]
             cursor.execute("UPDATE users_on_courses SET " + new_column + " = %s where id = %s", (categorize(old_value, boundaries), row[0]))
 
-        log(" -> [DONE]")
+    cursor.execute("SELECT id, year_of_birth from users")
+    for row in cursor.fetchall():
+        old_value = row[1]
+        if old_value == None:
+            categorized = None
+        elif old_value == "NA":
+            categorized = None
+        elif int(old_value) < 1981:            
+            categorized = "senior"
+        elif int(old_value) <= 1991:
+            categorized = "medium"
+        else:
+            categorized = "young"
+        cursor.execute("UPDATE users SET year_categorized = %s where id = %s", (categorized, row[0]))
+
+    log(" -> [DONE]")
+
+
 
     connection.commit()
 

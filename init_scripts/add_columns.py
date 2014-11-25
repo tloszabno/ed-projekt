@@ -65,6 +65,11 @@ try:
         log("Adding number_of_activity_days_categorized")
         cursor.execute("ALTER TABLE users_on_courses ADD COLUMN number_of_activity_days_categorized character varying(20) NULL")
 
+    cursor.execute("SELECT column_name FROM information_schema.columns WHERE table_name='users' and column_name='year_categorized'" )
+    exists = len(cursor.fetchall()) > 0
+    if not exists:
+        log("Adding year_categorized")
+        cursor.execute("ALTER TABLE users ADD COLUMN year_categorized character varying(20) NULL")
 
 
     connection.commit()

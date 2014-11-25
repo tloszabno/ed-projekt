@@ -24,10 +24,10 @@ col_4 <- as.factor(dataList$number_of_played_videos_normalized)
 dataList$number_of_played_videos_normalized<- col_4
 
 col_5 <- as.factor(dataList$number_of_interactions_normalized)
-dataList$number_of_interactions_normalized<- col_4
+dataList$number_of_interactions_normalized<- col_5
 
 col_6 <- as.factor(dataList$number_of_activity_days_normalized)
-dataList$number_of_activity_days_normalized<- col_4
+dataList$number_of_activity_days_normalized<- col_5
 
 
 ## Mine itemsets with tidLists.

@@ -65,7 +65,7 @@ dataList$Course_Year<- col_10
 col_11 <- as.factor(dataList$Region)
 dataList$Region<- col_11
 
-f <- eclat(dataList , parameter = list(support = 0.5, tidLists = TRUE, minlen=3))
+f <- eclat(dataList , parameter = list(support = 0.1, tidLists = TRUE, minlen=8))
 
 ##Show the Frequent itemsets and respectives supports
 inspect(f)

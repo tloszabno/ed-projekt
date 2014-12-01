@@ -1,0 +1,357 @@
+> 
+> f <- apriori(dataList , parameter = list(supp = 0.3, minlen = 4, target="frequent itemsets"))
+
+parameter specification:
+ confidence minval smax arem  aval originalSupport support minlen maxlen            target   ext
+        0.8    0.1    1 none FALSE            TRUE     0.3      4     10 frequent itemsets FALSE
+
+algorithmic control:
+ filter tree heap memopt load sort verbose
+    0.1 TRUE TRUE  FALSE TRUE    2    TRUE
+
+apriori - find association rules with the apriori algorithm
+version 4.21 (2004.05.09)        (c) 1996-2004   Christian Borgelt
+set item appearances ...[0 item(s)] done [0.00s].
+set transactions ...[76 item(s), 13688 transaction(s)] done [0.01s].
+sorting and recoding items ... [14 item(s)] done [0.00s].
+creating transaction tree ... done [0.00s].
+checking subsets of size 1 2 3 4 5 done [0.00s].
+writing ... [12 set(s)] done [0.00s].
+creating S4 object  ... done [0.00s].
+> 
+> ##Show the Frequent itemsets and respectives supports
+> inspect(f)
+   items                    support
+1  {Activity_Days=normal,          
+    Played_Videos=few,             
+    Course_Start=Fall,             
+    Course_Year=2012}     0.3154588
+2  {Gender=Male,                   
+    Activity_Days=normal,          
+    Course_Start=Fall,             
+    Course_Year=2012}     0.3244448
+3  {Interactions=normal,           
+    Activity_Days=normal,          
+    Course_Start=Fall,             
+    Course_Year=2012}     0.3663063
+4  {Age=medium,                    
+    Interactions=normal,           
+    Course_Start=Spring,           
+    Course_Year=2013}     0.3055961
+5  {Gender=Male,                   
+    Interactions=normal,           
+    Course_Start=Spring,           
+    Course_Year=2013}     0.3413939
+6  {Gender=Male,                   
+    Activity_Days=normal,          
+    Course_Start=Spring,           
+    Course_Year=2013}     0.3092490
+7  {Interactions=normal,           
+    Activity_Days=normal,          
+    Course_Start=Spring,           
+    Course_Year=2013}     0.4772063
+8  {Gender=Male,                   
+    Interactions=normal,           
+    Activity_Days=normal,          
+    Course_Start=Spring}  0.3031122
+9  {Gender=Male,                   
+    Interactions=normal,           
+    Activity_Days=normal,          
+    Course_Year=2013}     0.3165546
+10 {Gender=Male,                   
+    Age=medium,                    
+    Interactions=normal,           
+    Activity_Days=normal} 0.3265634
+11 {Gender=Male,                   
+    Interactions=normal,           
+    Activity_Days=normal,          
+    Played_Videos=few}    0.3601695
+12 {Gender=Male,                   
+    Interactions=normal,           
+    Activity_Days=normal,          
+    Course_Start=Spring,           
+    Course_Year=2013}     0.3031122
+> 
+> 
+> f <- apriori(dataList , parameter = list(supp = 0.2, minlen = 4, target="frequent itemsets"))
+
+parameter specification:
+ confidence minval smax arem  aval originalSupport support minlen maxlen            target   ext
+        0.8    0.1    1 none FALSE            TRUE     0.2      4     10 frequent itemsets FALSE
+
+algorithmic control:
+ filter tree heap memopt load sort verbose
+    0.1 TRUE TRUE  FALSE TRUE    2    TRUE
+
+apriori - find association rules with the apriori algorithm
+version 4.21 (2004.05.09)        (c) 1996-2004   Christian Borgelt
+set item appearances ...[0 item(s)] done [0.00s].
+set transactions ...[76 item(s), 13688 transaction(s)] done [0.00s].
+sorting and recoding items ... [19 item(s)] done [0.00s].
+creating transaction tree ... done [0.00s].
+checking subsets of size 1 2 3 4 5 done [0.00s].
+writing ... [62 set(s)] done [0.00s].
+creating S4 object  ... done [0.00s].
+> 
+> ##Show the Frequent itemsets and respectives supports
+> inspect(f)
+   items                    support
+1  {Education=Bachelor's,          
+    Age=medium,                    
+    Interactions=normal,           
+    Activity_Days=normal} 0.2409410
+2  {Education=Bachelor's,          
+    Gender=Male,                   
+    Interactions=normal,           
+    Activity_Days=normal} 0.2006867
+3  {Interactions=normal,           
+    Played_Videos=normal,          
+    Course_Start=Spring,           
+    Course_Year=2013}     0.2587668
+4  {Activity_Days=normal,          
+    Played_Videos=normal,          
+    Course_Start=Spring,           
+    Course_Year=2013}     0.2413063
+5  {Interactions=normal,           
+    Activity_Days=normal,          
+    Played_Videos=normal,          
+    Course_Start=Spring}  0.2396259
+6  {Interactions=normal,           
+    Activity_Days=normal,          
+    Played_Videos=normal,          
+    Course_Year=2013}     0.2445938
+7  {Age=medium,                    
+    Interactions=normal,           
+    Activity_Days=normal,          
+    Played_Videos=normal} 0.2239188
+8  {Gender=Male,                   
+    Interactions=normal,           
+    Activity_Days=normal,          
+    Played_Videos=normal} 0.2245763
+9  {Gender=Male,                   
+    Grade=5,                       
+    Course_Start=Fall,             
+    Course_Year=2012}     0.2060199
+10 {Grade=5,                       
+    Interactions=normal,           
+    Course_Start=Fall,             
+    Course_Year=2012}     0.2443746
+11 {Grade=5,                       
+    Activity_Days=normal,          
+    Course_Start=Fall,             
+    Course_Year=2012}     0.2670953
+12 {Grade=5,                       
+    Interactions=normal,           
+    Activity_Days=normal,          
+    Course_Start=Fall}    0.2402835
+13 {Grade=5,                       
+    Interactions=normal,           
+    Activity_Days=normal,          
+    Course_Year=2012}     0.2402835
+14 {Age=medium,                    
+    Grade=5,                       
+    Interactions=normal,           
+    Activity_Days=normal} 0.2007598
+15 {Grade=5,                       
+    Interactions=normal,           
+    Activity_Days=normal,          
+    Played_Videos=few}    0.2114991
+16 {Gender=Male,                   
+    Grade=5,                       
+    Interactions=normal,           
+    Activity_Days=normal} 0.2437902
+17 {Age=medium,                    
+    Interactions=normal,           
+    Course_Start=Fall,             
+    Course_Year=2012}     0.2238457
+18 {Age=medium,                    
+    Activity_Days=normal,          
+    Course_Start=Fall,             
+    Course_Year=2012}     0.2535067
+19 {Gender=Male,                   
+    Played_Videos=few,             
+    Course_Start=Fall,             
+    Course_Year=2012}     0.2564290
+20 {Interactions=normal,           
+    Played_Videos=few,             
+    Course_Start=Fall,             
+    Course_Year=2012}     0.2568673
+21 {Activity_Days=normal,          
+    Played_Videos=few,             
+    Course_Start=Fall,             
+    Course_Year=2012}     0.3154588
+22 {Gender=Male,                   
+    Interactions=normal,           
+    Course_Start=Fall,             
+    Course_Year=2012}     0.2790035
+23 {Gender=Male,                   
+    Activity_Days=normal,          
+    Course_Start=Fall,             
+    Course_Year=2012}     0.3244448
+24 {Interactions=normal,           
+    Activity_Days=normal,          
+    Course_Start=Fall,             
+    Course_Year=2012}     0.3663063
+25 {Age=medium,                    
+    Interactions=normal,           
+    Activity_Days=normal,          
+    Course_Start=Fall}    0.2203390
+26 {Gender=Male,                   
+    Interactions=normal,           
+    Played_Videos=few,             
+    Course_Start=Fall}    0.2006137
+27 {Gender=Male,                   
+    Activity_Days=normal,          
+    Played_Videos=few,             
+    Course_Start=Fall}    0.2500000
+28 {Interactions=normal,           
+    Activity_Days=normal,          
+    Played_Videos=few,             
+    Course_Start=Fall}    0.2553331
+29 {Gender=Male,                   
+    Interactions=normal,           
+    Activity_Days=normal,          
+    Course_Start=Fall}    0.2735243
+30 {Age=medium,                    
+    Interactions=normal,           
+    Activity_Days=normal,          
+    Course_Year=2012}     0.2203390
+31 {Gender=Male,                   
+    Interactions=normal,           
+    Played_Videos=few,             
+    Course_Year=2012}     0.2006137
+32 {Gender=Male,                   
+    Activity_Days=normal,          
+    Played_Videos=few,             
+    Course_Year=2012}     0.2500000
+33 {Interactions=normal,           
+    Activity_Days=normal,          
+    Played_Videos=few,             
+    Course_Year=2012}     0.2553331
+34 {Gender=Male,                   
+    Interactions=normal,           
+    Activity_Days=normal,          
+    Course_Year=2012}     0.2735243
+35 {Age=medium,                    
+    Interactions=normal,           
+    Course_Start=Spring,           
+    Course_Year=2013}     0.3055961
+36 {Age=medium,                    
+    Activity_Days=normal,          
+    Course_Start=Spring,           
+    Course_Year=2013}     0.2822180
+37 {Interactions=normal,           
+    Played_Videos=few,             
+    Course_Start=Spring,           
+    Course_Year=2013}     0.2658533
+38 {Activity_Days=normal,          
+    Played_Videos=few,             
+    Course_Start=Spring,           
+    Course_Year=2013}     0.2385301
+39 {Gender=Male,                   
+    Interactions=normal,           
+    Course_Start=Spring,           
+    Course_Year=2013}     0.3413939
+40 {Gender=Male,                   
+    Activity_Days=normal,          
+    Course_Start=Spring,           
+    Course_Year=2013}     0.3092490
+41 {Interactions=normal,           
+    Activity_Days=normal,          
+    Course_Start=Spring,           
+    Course_Year=2013}     0.4772063
+42 {Age=medium,                    
+    Interactions=normal,           
+    Activity_Days=normal,          
+    Course_Start=Spring}  0.2777615
+43 {Interactions=normal,           
+    Activity_Days=normal,          
+    Played_Videos=few,             
+    Course_Start=Spring}  0.2323203
+44 {Gender=Male,                   
+    Interactions=normal,           
+    Activity_Days=normal,          
+    Course_Start=Spring}  0.3031122
+45 {Age=medium,                    
+    Interactions=normal,           
+    Activity_Days=normal,          
+    Course_Year=2013}     0.2803185
+46 {Interactions=normal,           
+    Activity_Days=normal,          
+    Played_Videos=few,             
+    Course_Year=2013}     0.2413063
+47 {Gender=Male,                   
+    Interactions=normal,           
+    Activity_Days=normal,          
+    Course_Year=2013}     0.3165546
+48 {Gender=Male,                   
+    Age=medium,                    
+    Interactions=normal,           
+    Played_Videos=few}    0.2011251
+49 {Gender=Male,                   
+    Age=medium,                    
+    Activity_Days=normal,          
+    Played_Videos=few}    0.2207773
+50 {Age=medium,                    
+    Interactions=normal,           
+    Activity_Days=normal,          
+    Played_Videos=few}    0.2729398
+51 {Gender=Male,                   
+    Age=medium,                    
+    Interactions=normal,           
+    Activity_Days=normal} 0.3265634
+52 {Gender=Male,                   
+    Interactions=normal,           
+    Activity_Days=normal,          
+    Played_Videos=few}    0.3601695
+53 {Interactions=normal,           
+    Activity_Days=normal,          
+    Played_Videos=normal,          
+    Course_Start=Spring,           
+    Course_Year=2013}     0.2396259
+54 {Grade=5,                       
+    Interactions=normal,           
+    Activity_Days=normal,          
+    Course_Start=Fall,             
+    Course_Year=2012}     0.2402835
+55 {Age=medium,                    
+    Interactions=normal,           
+    Activity_Days=normal,          
+    Course_Start=Fall,             
+    Course_Year=2012}     0.2203390
+56 {Gender=Male,                   
+    Interactions=normal,           
+    Played_Videos=few,             
+    Course_Start=Fall,             
+    Course_Year=2012}     0.2006137
+57 {Gender=Male,                   
+    Activity_Days=normal,          
+    Played_Videos=few,             
+    Course_Start=Fall,             
+    Course_Year=2012}     0.2500000
+58 {Interactions=normal,           
+    Activity_Days=normal,          
+    Played_Videos=few,             
+    Course_Start=Fall,             
+    Course_Year=2012}     0.2553331
+59 {Gender=Male,                   
+    Interactions=normal,           
+    Activity_Days=normal,          
+    Course_Start=Fall,             
+    Course_Year=2012}     0.2735243
+60 {Age=medium,                    
+    Interactions=normal,           
+    Activity_Days=normal,          
+    Course_Start=Spring,           
+    Course_Year=2013}     0.2777615
+61 {Interactions=normal,           
+    Activity_Days=normal,          
+    Played_Videos=few,             
+    Course_Start=Spring,           
+    Course_Year=2013}     0.2323203
+62 {Gender=Male,                   
+    Interactions=normal,           
+    Activity_Days=normal,          
+    Course_Start=Spring,           
+    Course_Year=2013}     0.3031122
+> 

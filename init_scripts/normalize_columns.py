@@ -11,9 +11,11 @@ def log(msg):
 ### GRADE
 ###
 ########
-def normalize_grade(grade_srt):
+def normalize_grade(grade_srt, certified):
     try:
         grade = float(grade_srt)
+        if grade < 0.5 and certified:
+            return 3.0 # fix for inconsistent data
         if grade < 0.5:
             return 2.0
         if grade < 0.6:
@@ -24,19 +26,19 @@ def normalize_grade(grade_srt):
             return 4.0
         if grade < 0.9:
             return 4.5
-        if grade >= 0.0 and grade < 1.0:
-            return 5.0
-        return 2.0
+        return 5.0
+        
     except:
         return 2.0
 
 def fill_grade_normalized(cursor):
     log("Filling grade_normalized...")
-    cursor.execute("select id, grade from users_on_courses")
+    cursor.execute("select id, grade, certified from users_on_courses")
     for row in cursor.fetchall():
         id = row[0]
         grade = row[1]
-        new_grade = normalize_grade(grade)
+        certified =  row[2]
+        new_grade = normalize_grade(grade,certified)
         cursor.execute("UPDATE users_on_courses SET grade_normalized = %s where id = %s", (new_grade, id))
     log("Filling grade_normalized....[OK]")
 
@@ -121,10 +123,10 @@ try:
 
     cursor = connection.cursor()
 
-    #fill_grade_normalized(cursor)
-    fill_number_of_played_videos_normalized(cursor)
-    fill_number_of_interactions_normalized(cursor)
-    fill_number_of_activity_days_normalized(cursor)
+    fill_grade_normalized(cursor)
+    #fill_number_of_played_videos_normalized(cursor)
+    #fill_number_of_interactions_normalized(cursor)
+    #fill_number_of_activity_days_normalized(cursor)
 
     connection.commit()
 finally:

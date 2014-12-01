@@ -4,6 +4,102 @@
 		"selected_items":
 		[
 			[
+				"list",
+				"list_as_csv	function"
+			],
+			[
+				"cu",
+				"cursor	statement"
+			],
+			[
+				"avg",
+				"avg_of_played_videos	statement"
+			],
+			[
+				"sum_",
+				"sum_of_played_videos	statement"
+			],
+			[
+				"us",
+				"users_with_grade_5_and_4_5	statement"
+			],
+			[
+				"normal",
+				"normalized	statement"
+			],
+			[
+				"norm",
+				"normalized	statement"
+			],
+			[
+				"max",
+				"max_for_course	statement"
+			],
+			[
+				"ma",
+				"max_for_course	statement"
+			],
+			[
+				"num",
+				"num_of_playes"
+			],
+			[
+				"co",
+				"course_id	param"
+			],
+			[
+				"cou",
+				"courses_max	param"
+			],
+			[
+				"get_user",
+				"get_users_with_grade	function"
+			],
+			[
+				"grade_",
+				"grade_to"
+			],
+			[
+				"e",
+				"execute"
+			],
+			[
+				"user",
+				"users_on_courses"
+			],
+			[
+				"grade",
+				"grade_srt	param"
+			],
+			[
+				"ex",
+				"exists	statement"
+			],
+			[
+				"yo",
+				"year_of_birth"
+			],
+			[
+				"ed",
+				"ed_stat"
+			],
+			[
+				"get",
+				"get_users_education_level	function"
+			],
+			[
+				"wh",
+				"what_is_the_max_in_passed_courses_per_user"
+			],
+			[
+				"all",
+				"all_num	statement"
+			],
+			[
+				"col",
+				"col	forflow"
+			],
+			[
 				"ca",
 				"cache_Region	statement"
 			],
@@ -12,20 +108,8 @@
 				"users_on_courses_cache	statement"
 			],
 			[
-				"co",
-				"courses_cache	statement"
-			],
-			[
-				"us",
-				"users_cache	statement"
-			],
-			[
 				"cach",
 				"cache_Genders	statement"
-			],
-			[
-				"user",
-				"user_on_course	statement"
 			],
 			[
 				"old",
@@ -46,10 +130,6 @@
 			[
 				"u",
 				"User	class"
-			],
-			[
-				"cou",
-				"course_old_id	statement"
 			],
 			[
 				"ch",
@@ -78,10 +158,6 @@
 			[
 				"number",
 				"number_of_chapters_interacted"
-			],
-			[
-				"num",
-				"number_of_played_videos"
 			],
 			[
 				"raw",
@@ -138,10 +214,6 @@
 			[
 				"st",
 				"start_time_di"
-			],
-			[
-				"ex",
-				"execute"
 			],
 			[
 				"Cou",
@@ -224,7 +296,15 @@
 	"buffers":
 	[
 		{
-			"file": "init_db.py",
+			"file": "histograms/simple_stats.py",
+			"settings":
+			{
+				"buffer_size": 12001,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "init_scripts/init_db.py",
 			"settings":
 			{
 				"buffer_size": 1972,
@@ -232,31 +312,7 @@
 			}
 		},
 		{
-			"file": "create_new_schema.py",
-			"settings":
-			{
-				"buffer_size": 2363,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "new_import/create_model.py",
-			"settings":
-			{
-				"buffer_size": 3975,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "new_import/new_import.py",
-			"settings":
-			{
-				"buffer_size": 3292,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "new_import/db_actions.py",
+			"file": "init_scripts/db_actions.py",
 			"settings":
 			{
 				"buffer_size": 835,
@@ -264,10 +320,42 @@
 			}
 		},
 		{
-			"file": "new_import/model.py",
+			"file": "init_scripts/add_columns.py",
 			"settings":
 			{
-				"buffer_size": 5005,
+				"buffer_size": 1913,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "init_scripts/fill_additional_columns.py",
+			"settings":
+			{
+				"buffer_size": 4290,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "init_scripts/model.py",
+			"settings":
+			{
+				"buffer_size": 5085,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "init_scripts/migrate.py",
+			"settings":
+			{
+				"buffer_size": 3306,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "init_scripts/create_model.py",
+			"settings":
+			{
+				"buffer_size": 3973,
 				"line_ending": "Unix"
 			}
 		}
@@ -300,12 +388,21 @@
 	"expanded_folders":
 	[
 		"/home/tomek/ed",
-		"/home/tomek/ed/new_import"
+		"/home/tomek/ed/histograms",
+		"/home/tomek/ed/init_scripts"
 	],
 	"file_history":
 	[
-		"/home/tomek/ed/new_import/create_model.py",
+		"/home/tomek/ed/init_scripts/add_columns.py",
+		"/home/tomek/ed/model.py",
 		"/home/tomek/ed/new_import/model.py",
+		"/home/tomek/ed/new_import/create_model.py",
+		"/home/tomek/ed/init_db.py",
+		"/home/tomek/ed/create_new_schema.py",
+		"/home/tomek/ed/new_import/new_import.py",
+		"/home/tomek/ed/new_import/db_actions.py",
+		"/home/tomek/ed/ed-python/migrate.py",
+		"/home/tomek/ed/ed-python/init_db.py",
 		"/home/tomek/ed/new_move.py",
 		"/home/tomek/ed/install.sh",
 		"/home/tomek/Pulpit/dane",
@@ -316,7 +413,7 @@
 	],
 	"find":
 	{
-		"height": 23.0
+		"height": 35.0
 	},
 	"find_in_files":
 	{
@@ -330,6 +427,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"coursor",
 			"next_id",
 			" \",",
 			",",
@@ -355,12 +453,40 @@
 	"groups":
 	[
 		{
-			"selected": 3,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "init_db.py",
+					"file": "histograms/simple_stats.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 12001,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								7202,
+								7202
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 3060.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "init_scripts/init_db.py",
 					"semi_transient": false,
 					"settings":
 					{
@@ -371,47 +497,18 @@
 						"selection":
 						[
 							[
-								516,
-								516
+								770,
+								770
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/Python/Python.tmLanguage",
+							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "create_new_schema.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2363,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								234,
-								234
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Python/Python.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 630.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 2,
@@ -419,66 +516,8 @@
 				},
 				{
 					"buffer": 2,
-					"file": "new_import/create_model.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3975,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3975,
-								3975
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Python/Python.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 270.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "new_import/new_import.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3292,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1826,
-								1826
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Python/Python.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 630.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "new_import/db_actions.py",
-					"semi_transient": false,
+					"file": "init_scripts/db_actions.py",
+					"semi_transient": true,
 					"settings":
 					{
 						"buffer_size": 835,
@@ -488,42 +527,8 @@
 						"selection":
 						[
 							[
-								669,
-								669
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Python/Python.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				}
-			]
-		},
-		{
-			"selected": 0,
-			"sheets":
-			[
-				{
-					"buffer": 5,
-					"file": "new_import/model.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 5005,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1206,
-								1206
+								273,
+								273
 							]
 						],
 						"settings":
@@ -536,7 +541,155 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "init_scripts/add_columns.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1913,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								924,
+								924
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "init_scripts/fill_additional_columns.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4290,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1557,
+								1557
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 945.0,
+						"zoom_level": 1.0
+					},
 					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "init_scripts/model.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5085,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "init_scripts/migrate.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3306,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1139,
+								1139
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 225.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "init_scripts/create_model.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3973,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								51,
+								51
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
 					"type": "text"
 				}
 			]
@@ -559,18 +712,11 @@
 				0,
 				1,
 				1
-			],
-			[
-				1,
-				0,
-				2,
-				1
 			]
 		],
 		"cols":
 		[
 			0.0,
-			0.5,
 			1.0
 		],
 		"rows":
@@ -580,6 +726,10 @@
 		]
 	},
 	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 100.0
+	},
 	"output.find_results":
 	{
 		"height": 0.0

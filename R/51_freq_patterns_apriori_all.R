@@ -18,7 +18,7 @@ JOIN users_on_courses AS u_o_c ON u_o_c.user_id = usr.id
 JOIN courses AS courses_tab ON courses_tab.id = u_o_c.course_id
 JOIN periods AS periods_tab ON periods_tab.id = courses_tab.period_id
 JOIN regions AS regions_tab ON regions_tab.id = u_o_c.region_id
-WHERE u_o_c.certified = 0
+WHERE u_o_c.certified = 1
 AND usr.year_categorized IS NOT NULL')
 
 
@@ -67,28 +67,11 @@ dataList$Course_Year<- col_10
 col_11 <- as.factor(dataList$Region)
 dataList$Region<- col_11
 
-f <- apriori(dataList , parameter = list(supp = 0.5, minlen = 6, target="frequent itemsets"))
+itemsets <- apriori(dataList , parameter = list(supp = 0.5, minlen = 3, target="frequent itemsets"))
 
 ##Show the Frequent itemsets and respectives supports
-inspect(f)
+inspect(itemsets)
 
-
-f <- apriori(dataList , parameter = list(supp = 0.4, minlen =6, target="frequent itemsets"))
-
-##Show the Frequent itemsets and respectives supports
-inspect(f)
-
-
-f <- apriori(dataList , parameter = list(supp = 0.3, minlen = 4, target="frequent itemsets"))
-
-##Show the Frequent itemsets and respectives supports
-inspect(f)
-
-
-f <- apriori(dataList , parameter = list(supp = 0.2, minlen = 4, target="frequent itemsets"))
-
-##Show the Frequent itemsets and respectives supports
-inspect(f)
 
 
 

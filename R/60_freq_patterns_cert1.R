@@ -1,3 +1,5 @@
+library(arules)
+
 res <- dbSendQuery(con, 'SELECT edu_lvl.name AS "Education",
 gend.name AS "Gender",
 usr.year_categorized AS "Age", 
@@ -18,7 +20,7 @@ JOIN periods AS periods_tab ON periods_tab.id = courses_tab.period_id
 JOIN regions AS regions_tab ON regions_tab.id = u_o_c.region_id
 WHERE u_o_c.certified = 1
 AND usr.year_categorized IS NOT NULL')
-#LIMIT 400') 
+
 
 dataList <- dbFetch(res)
 dbClearResult(res)
@@ -65,10 +67,14 @@ dataList$Course_Year<- col_10
 col_11 <- as.factor(dataList$Region)
 dataList$Region<- col_11
 
-f <- eclat(dataList , parameter = list(support = 0.1, tidLists = TRUE, minlen=8))
+itemsets <- apriori(dataList , parameter = list(supp = 0.4, minlen = 4, target="frequent itemsets"))
 
 ##Show the Frequent itemsets and respectives supports
-inspect(f)
+inspect(itemsets)
+
+
+
+
 
 
 

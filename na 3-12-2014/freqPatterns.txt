@@ -1,0 +1,486 @@
+FREQ PATTERNS:
+certified = 1
+Dane:
+"Education", "Gender", "Age", "Grade", "Interactions", "Activity_Days", "Played_Videos", "Course_Start", "Course_Name", "Course_Year", "Region"
+
+MinLen = 3, support od największego w dół
+  items                    support
+1 {Interactions=normal,           
+   Course_Start=Spring,           
+   Course_Year=2013}     0.5311222
+2 {Age=medium,                    
+   Interactions=normal,           
+   Activity_Days=normal} 0.5006575
+3 {Gender=Male,                   
+   Interactions=normal,           
+   Activity_Days=normal} 0.5900789
+
+graph:
+cert_1_supp_0_5.png
+
+
+support = 0.4
+minLen = 3
+   items                    support
+1  {Activity_Days=normal,          
+    Course_Start=Fall,             
+    Course_Year=2012}     0.4272355
+2  {Interactions=normal,           
+    Course_Start=Spring,           
+    Course_Year=2013}     0.5311222
+3  {Activity_Days=normal,          
+    Course_Start=Spring,           
+    Course_Year=2013}     0.4864115
+4  {Interactions=normal,           
+    Activity_Days=normal,          
+    Course_Start=Spring}  0.4772063
+5  {Interactions=normal,           
+    Activity_Days=normal,          
+    Course_Year=2013}     0.4921099
+6  {Age=medium,                    
+    Interactions=normal,           
+    Activity_Days=normal} 0.5006575
+7  {Gender=Male,                   
+    Activity_Days=normal,          
+    Played_Videos=few}    0.4153273
+8  {Interactions=normal,           
+    Activity_Days=normal,          
+    Played_Videos=few}    0.4966394
+9  {Gender=Male,                   
+    Interactions=normal,           
+    Activity_Days=normal} 0.5900789
+10 {Interactions=normal,           
+    Activity_Days=normal,          
+    Course_Start=Spring,           
+    Course_Year=2013}     0.4772063
+> 
+
+
+
+support = 0.2 
+minLen = 4
+
+   items                    support
+1  {Education=Bachelor's,          
+    Age=medium,                    
+    Interactions=normal,           
+    Activity_Days=normal} 0.2409410
+2  {Education=Bachelor's,          
+    Gender=Male,                   
+    Interactions=normal,           
+    Activity_Days=normal} 0.2006867
+3  {Interactions=normal,           
+    Played_Videos=normal,          
+    Course_Start=Spring,           
+    Course_Year=2013}     0.2587668
+4  {Activity_Days=normal,          
+    Played_Videos=normal,          
+    Course_Start=Spring,           
+    Course_Year=2013}     0.2413063
+5  {Interactions=normal,           
+    Activity_Days=normal,          
+    Played_Videos=normal,          
+    Course_Start=Spring}  0.2396259
+6  {Interactions=normal,           
+    Activity_Days=normal,          
+    Played_Videos=normal,          
+    Course_Year=2013}     0.2445938
+7  {Age=medium,                    
+    Interactions=normal,           
+    Activity_Days=normal,          
+    Played_Videos=normal} 0.2239188
+8  {Gender=Male,                   
+    Interactions=normal,           
+    Activity_Days=normal,          
+    Played_Videos=normal} 0.2245763
+9  {Gender=Male,                   
+    Grade=5,                       
+    Course_Start=Fall,             
+    Course_Year=2012}     0.2060199
+10 {Grade=5,                       
+    Interactions=normal,           
+    Course_Start=Fall,             
+    Course_Year=2012}     0.2443746
+11 {Grade=5,                       
+    Activity_Days=normal,          
+    Course_Start=Fall,             
+    Course_Year=2012}     0.2670953
+12 {Grade=5,                       
+    Interactions=normal,           
+    Activity_Days=normal,          
+    Course_Start=Fall}    0.2402835
+13 {Grade=5,                       
+    Interactions=normal,           
+    Activity_Days=normal,          
+    Course_Year=2012}     0.2402835
+14 {Age=medium,                    
+    Grade=5,                       
+    Interactions=normal,           
+    Activity_Days=normal} 0.2007598
+15 {Grade=5,                       
+    Interactions=normal,           
+    Activity_Days=normal,          
+    Played_Videos=few}    0.2114991
+16 {Gender=Male,                   
+    Grade=5,                       
+    Interactions=normal,           
+    Activity_Days=normal} 0.2437902
+17 {Age=medium,                    
+    Interactions=normal,           
+    Course_Start=Fall,             
+    Course_Year=2012}     0.2238457
+18 {Age=medium,                    
+    Activity_Days=normal,          
+    Course_Start=Fall,             
+    Course_Year=2012}     0.2535067
+19 {Gender=Male,                   
+    Played_Videos=few,             
+    Course_Start=Fall,             
+    Course_Year=2012}     0.2564290
+20 {Interactions=normal,           
+    Played_Videos=few,             
+    Course_Start=Fall,             
+    Course_Year=2012}     0.2568673
+21 {Activity_Days=normal,          
+    Played_Videos=few,             
+    Course_Start=Fall,             
+    Course_Year=2012}     0.3154588
+22 {Gender=Male,                   
+    Interactions=normal,           
+    Course_Start=Fall,             
+    Course_Year=2012}     0.2790035
+23 {Gender=Male,                   
+    Activity_Days=normal,          
+    Course_Start=Fall,             
+    Course_Year=2012}     0.3244448
+24 {Interactions=normal,           
+    Activity_Days=normal,          
+    Course_Start=Fall,             
+    Course_Year=2012}     0.3663063
+25 {Age=medium,                    
+    Interactions=normal,           
+    Activity_Days=normal,          
+    Course_Start=Fall}    0.2203390
+26 {Gender=Male,                   
+    Interactions=normal,           
+    Played_Videos=few,             
+    Course_Start=Fall}    0.2006137
+27 {Gender=Male,                   
+    Activity_Days=normal,          
+    Played_Videos=few,             
+    Course_Start=Fall}    0.2500000
+28 {Interactions=normal,           
+    Activity_Days=normal,          
+    Played_Videos=few,             
+    Course_Start=Fall}    0.2553331
+29 {Gender=Male,                   
+    Interactions=normal,           
+    Activity_Days=normal,          
+    Course_Start=Fall}    0.2735243
+30 {Age=medium,                    
+    Interactions=normal,           
+    Activity_Days=normal,          
+    Course_Year=2012}     0.2203390
+31 {Gender=Male,                   
+    Interactions=normal,           
+    Played_Videos=few,             
+    Course_Year=2012}     0.2006137
+32 {Gender=Male,                   
+    Activity_Days=normal,          
+    Played_Videos=few,             
+    Course_Year=2012}     0.2500000
+33 {Interactions=normal,           
+    Activity_Days=normal,          
+    Played_Videos=few,             
+    Course_Year=2012}     0.2553331
+34 {Gender=Male,                   
+    Interactions=normal,           
+    Activity_Days=normal,          
+    Course_Year=2012}     0.2735243
+35 {Age=medium,                    
+    Interactions=normal,           
+    Course_Start=Spring,           
+    Course_Year=2013}     0.3055961
+36 {Age=medium,                    
+    Activity_Days=normal,          
+    Course_Start=Spring,           
+    Course_Year=2013}     0.2822180
+37 {Interactions=normal,           
+    Played_Videos=few,             
+    Course_Start=Spring,           
+    Course_Year=2013}     0.2658533
+38 {Activity_Days=normal,          
+    Played_Videos=few,             
+    Course_Start=Spring,           
+    Course_Year=2013}     0.2385301
+39 {Gender=Male,                   
+    Interactions=normal,           
+    Course_Start=Spring,           
+    Course_Year=2013}     0.3413939
+40 {Gender=Male,                   
+    Activity_Days=normal,          
+    Course_Start=Spring,           
+    Course_Year=2013}     0.3092490
+41 {Interactions=normal,           
+    Activity_Days=normal,          
+    Course_Start=Spring,           
+    Course_Year=2013}     0.4772063
+42 {Age=medium,                    
+    Interactions=normal,           
+    Activity_Days=normal,          
+    Course_Start=Spring}  0.2777615
+43 {Interactions=normal,           
+    Activity_Days=normal,          
+    Played_Videos=few,             
+    Course_Start=Spring}  0.2323203
+44 {Gender=Male,                   
+    Interactions=normal,           
+    Activity_Days=normal,          
+    Course_Start=Spring}  0.3031122
+45 {Age=medium,                    
+    Interactions=normal,           
+    Activity_Days=normal,          
+    Course_Year=2013}     0.2803185
+46 {Interactions=normal,           
+    Activity_Days=normal,          
+    Played_Videos=few,             
+    Course_Year=2013}     0.2413063
+47 {Gender=Male,                   
+    Interactions=normal,           
+    Activity_Days=normal,          
+    Course_Year=2013}     0.3165546
+48 {Gender=Male,                   
+    Age=medium,                    
+    Interactions=normal,           
+    Played_Videos=few}    0.2011251
+49 {Gender=Male,                   
+    Age=medium,                    
+    Activity_Days=normal,          
+    Played_Videos=few}    0.2207773
+50 {Age=medium,                    
+    Interactions=normal,           
+    Activity_Days=normal,          
+    Played_Videos=few}    0.2729398
+51 {Gender=Male,                   
+    Age=medium,                    
+    Interactions=normal,           
+    Activity_Days=normal} 0.3265634
+52 {Gender=Male,                   
+    Interactions=normal,           
+    Activity_Days=normal,          
+    Played_Videos=few}    0.3601695
+53 {Interactions=normal,           
+    Activity_Days=normal,          
+    Played_Videos=normal,          
+    Course_Start=Spring,           
+    Course_Year=2013}     0.2396259
+54 {Grade=5,                       
+    Interactions=normal,           
+    Activity_Days=normal,          
+    Course_Start=Fall,             
+    Course_Year=2012}     0.2402835
+55 {Age=medium,                    
+    Interactions=normal,           
+    Activity_Days=normal,          
+    Course_Start=Fall,             
+    Course_Year=2012}     0.2203390
+56 {Gender=Male,                   
+    Interactions=normal,           
+    Played_Videos=few,             
+    Course_Start=Fall,             
+    Course_Year=2012}     0.2006137
+57 {Gender=Male,                   
+    Activity_Days=normal,          
+    Played_Videos=few,             
+    Course_Start=Fall,             
+    Course_Year=2012}     0.2500000
+58 {Interactions=normal,           
+    Activity_Days=normal,          
+    Played_Videos=few,             
+    Course_Start=Fall,             
+    Course_Year=2012}     0.2553331
+59 {Gender=Male,                   
+    Interactions=normal,           
+    Activity_Days=normal,          
+    Course_Start=Fall,             
+    Course_Year=2012}     0.2735243
+60 {Age=medium,                    
+    Interactions=normal,           
+    Activity_Days=normal,          
+    Course_Start=Spring,           
+    Course_Year=2013}     0.2777615
+61 {Interactions=normal,           
+    Activity_Days=normal,          
+    Played_Videos=few,             
+    Course_Start=Spring,           
+    Course_Year=2013}     0.2323203
+62 {Gender=Male,                   
+    Interactions=normal,           
+    Activity_Days=normal,          
+    Course_Start=Spring,           
+    Course_Year=2013}     0.3031122
+
+
+
+
+
+support = 0.1
+minLen = 7
+  items                    support
+1 {Gender=Male,                   
+   Age=medium,                    
+   Grade=5,                       
+   Interactions=normal,           
+   Activity_Days=normal,          
+   Course_Start=Fall,             
+   Course_Year=2012}     0.1008913
+2 {Gender=Male,                   
+   Grade=5,                       
+   Interactions=normal,           
+   Activity_Days=normal,          
+   Played_Videos=few,             
+   Course_Start=Fall,             
+   Course_Year=2012}     0.1287989
+3 {Gender=Male,                   
+   Age=medium,                    
+   Interactions=normal,           
+   Activity_Days=normal,          
+   Played_Videos=few,             
+   Course_Start=Fall,             
+   Course_Year=2012}     0.1120690
+   
+ ================================================================
+ ================================================================
+ ================================================================
+ ================================================================
+ ================================================================
+ ================================================================
+ 
+ 
+ FREQ PATTERNS:
+certified = 0
+Dane:
+"Education", "Gender", "Age", "Course_Start", "Course_Name", "Course_Year", "Region"
+Bez:
+"Grade", "Interactions", "Activity_Days", "Played_Videos", - zaciemniały wyniki (praktycznie wszędzie takie same wyniki)
+
+
+Tutaj też od największego supportu na coraz mniejszy
+support 0.4:
+
+  items                   support
+1 {Course_Start=Spring,          
+   Course_Year=2013}    0.4616684
+2 {Course_Start=Fall,            
+   Course_Year=2012}    0.5248036
+3 {Gender=Male,                  
+   Course_Year=2012}    0.4150844
+4 {Gender=Male,                  
+   Course_Start=Fall}   0.4150844
+5 {Gender=Male,                  
+   Age=medium}          0.4139979
+6 {Gender=Male,                  
+   Course_Start=Fall,            
+   Course_Year=2012}    0.4150844
+
+support=0.3
+   items                    support
+1  {Education=Bachelor's,          
+    Age=medium}           0.3009145
+2  {Education=Bachelor's,          
+    Gender=Male}          0.3033800
+3  {Course_Start=Spring,           
+    Course_Year=2013}     0.4616684
+4  {Gender=Male,                   
+    Course_Start=Spring}  0.3165594
+5  {Gender=Male,                   
+    Course_Year=2013}     0.3288150
+6  {Course_Start=Fall,             
+    Course_Year=2012}     0.5248036
+7  {Gender=Male,                   
+    Course_Start=Fall}    0.4150844
+8  {Gender=Male,                   
+    Course_Year=2012}     0.4150844
+9  {Gender=Male,                   
+    Age=medium}           0.4139979
+10 {Gender=Male,                   
+    Course_Start=Spring,           
+    Course_Year=2013}     0.3165594
+11 {Gender=Male,                   
+    Course_Start=Fall,             
+    Course_Year=2012}     0.4150844
+
+support = 0.1
+   items                                              support
+1  {Education=Bachelor's,                                    
+    Course_Start=Fall,                                       
+    Course_Name=Introduction to Computer Science I,          
+    Course_Year=2012}                               0.1135327
+2  {Age=medium,                                              
+    Course_Start=Fall,                                       
+    Course_Name=Introduction to Computer Science I,          
+    Course_Year=2012}                               0.1491471
+3  {Gender=Male,                                             
+    Course_Start=Fall,                                       
+    Course_Name=Introduction to Computer Science I,          
+    Course_Year=2012}                               0.2206683
+4  {Gender=Male,                                             
+    Age=medium,                                              
+    Course_Name=Introduction to Computer Science I,          
+    Course_Year=2012}                               0.1187541
+5  {Gender=Male,                                             
+    Age=medium,                                              
+    Course_Start=Fall,                                       
+    Course_Name=Introduction to Computer Science I} 0.1187541
+6  {Education=Secondary,                                     
+    Gender=Male,                                             
+    Course_Start=Spring,                                     
+    Course_Year=2013}                               0.1027587
+7  {Education=Secondary,                                     
+    Gender=Male,                                             
+    Course_Start=Fall,                                       
+    Course_Year=2012}                               0.1424170
+8  {Education=Bachelor's,                                    
+    Age=medium,                                              
+    Course_Start=Spring,                                     
+    Course_Year=2013}                               0.1383188
+9  {Education=Bachelor's,                                    
+    Gender=Male,                                             
+    Course_Start=Spring,                                     
+    Course_Year=2013}                               0.1270103
+10 {Education=Bachelor's,                                    
+    Age=medium,                                              
+    Course_Start=Fall,                                       
+    Course_Year=2012}                               0.1594775
+11 {Education=Bachelor's,                                    
+    Gender=Male,                                             
+    Course_Start=Fall,                                       
+    Course_Year=2012}                               0.1724187
+12 {Education=Bachelor's,                                    
+    Gender=Male,                                             
+    Age=medium,                                              
+    Course_Year=2012}                               0.1234681
+13 {Education=Bachelor's,                                    
+    Gender=Male,                                             
+    Age=medium,                                              
+    Course_Start=Fall}                              0.1234681
+14 {Gender=Male,                                             
+    Age=medium,                                              
+    Course_Start=Spring,                                     
+    Course_Year=2013}                               0.1747447
+15 {Gender=Male,                                             
+    Age=medium,                                              
+    Course_Start=Fall,                                       
+    Course_Year=2012}                               0.2339659
+16 {Gender=Male,                                             
+    Age=medium,                                              
+    Course_Start=Fall,                                       
+    Course_Name=Introduction to Computer Science I,          
+    Course_Year=2012}                               0.1187541
+17 {Education=Bachelor's,                                    
+    Gender=Male,                                             
+    Age=medium,                                              
+    Course_Start=Fall,                                       
+    Course_Year=2012}                               0.1234681
+> 
+

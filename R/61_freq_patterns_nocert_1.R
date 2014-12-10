@@ -46,10 +46,13 @@ dataList$Course_Year<- col_10
 col_11 <- as.factor(dataList$Region)
 dataList$Region<- col_11
 
-itemsets <- apriori(dataList , parameter = list(supp = 0.4, minlen = 2, target="frequent itemsets"))
+itemsets <- apriori(dataList , parameter = list(supp = 0.1, minlen = 2, target="frequent itemsets"))
 
 ##Show the Frequent itemsets and respectives supports
 inspect(itemsets)
+
+
+write(itemsets, file = "data2.csv", quote=TRUE, sep = ",", col.names = NA)
 
 
 

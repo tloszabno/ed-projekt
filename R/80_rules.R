@@ -1,4 +1,4 @@
-library(party)
+library(arules)
 
 res <- dbSendQuery(con, 'SELECT edu_lvl.name AS "Education",
 gend.name AS "Gender",
@@ -10,7 +10,8 @@ u_o_c.number_of_played_videos_categorized AS "Played_Videos",
 periods_tab.name AS "Course_Start",
 courses_tab.name AS "Course_Name",
 courses_tab.year AS "Course_Year",
-regions_tab.name AS "Region"
+regions_tab.name AS "Region",
+u_o_c.certified  AS "Certified",
 FROM users AS usr
 JOIN education_levels AS edu_lvl ON usr.education_level_id = edu_lvl.id
 JOIN genders AS gend ON usr.gender_id = gend.id
@@ -66,18 +67,17 @@ dataList$Course_Year<- col_10
 col_11 <- as.factor(dataList$Region)
 dataList$Region<- col_11
 
+col_12 <- as.factor(dataList$Certified)
+dataList$Certified <- col_12
 
-# k-means clustering - nie dziala...
-#newData <- dataList
-#newData$Certified <- NULL
-#(kc <- kmeans(newData, 3))
 
-# hierarchical
-#idx <- sample(1:dim(dataList)[1], 40)
-#dataSample <- dataList[idx,]
-#dataSample$Certified <- NULL
-#hc <- hclust(dist(dataSample), method="ave")
+itemsets <- apriori(dataList , parameter = list(supp = 0.1, minlen = 3, target="rules"))
 
-library(fpc)
-library(cluster)
-pamk.result <- pamk(dataList)
+##Show the Frequent itemsets and respectives supports
+#inspect(itemsets)
+summary(itemsets)
+rulesDF <- as(itemsets, "data.frame");
+summary(rulesDF )
+write(itemsets, file = "rules.csv",  sep = ",")
+
+

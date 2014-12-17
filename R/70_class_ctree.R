@@ -3,7 +3,6 @@ library(party)
 res <- dbSendQuery(con, 'SELECT edu_lvl.name AS "Education",
 gend.name AS "Gender",
 usr.year_categorized AS "Age", 
-u_o_c.grade_normalized AS "Grade",
 u_o_c.number_of_interactions_categorized AS "Interactions",
 u_o_c.number_of_activity_days_categorized AS "Activity_Days",
 u_o_c.number_of_played_videos_categorized AS "Played_Videos",
@@ -19,7 +18,7 @@ JOIN users_on_courses AS u_o_c ON u_o_c.user_id = usr.id
 JOIN courses AS courses_tab ON courses_tab.id = u_o_c.course_id
 JOIN periods AS periods_tab ON periods_tab.id = courses_tab.period_id
 JOIN regions AS regions_tab ON regions_tab.id = u_o_c.region_id
-AND usr.year_categorized IS NOT NULL LIMIT 500')
+AND usr.year_categorized IS NOT NULL')
 
 
 dataList <- dbFetch(res)
@@ -35,9 +34,6 @@ dataList$Gender<- col_2
 col_3 <- as.factor(dataList$Age)
 dataList$Age<- col_3
 
-
-col_4 <- as.factor(dataList$Grade)
-dataList$Grade<- col_4
 
 
 col_5 <- as.factor(dataList$Interactions)
@@ -95,21 +91,24 @@ testing <- dataList[-trainindexes, ]
 #training <- splits$trainset
 #testing <- splits$testset
  
-str(training)
-str(testing)
+#str(training)
+#str(testing)
 
-certified_ctree <- ctree(Certified ~ Education + Age + Gender + Interactions, data=training)
-str(certified_ctree)
+#certified_ctree <- ctree(Certified ~ Education + Age + Gender + Interactions, data=training)
+certified_ctree <- ctree(Certified ~ ., data=training)
+#str(certified_ctree)
 summary(certified_ctree)
-print(certified_ctree)
+#print(certified_ctree)
 
-plot(certified_ctree, type="simple")
+plot(certified_ctree)
+#plot(certified_ctree, type="simple")
 
 predicted <- predict(certified_ctree, newdata = testing)
-str(predicted )
+#str(predicted )
 summary(predicted )
-print(predicted )
+#print(predicted )
 
 plot(testPred  , type="simple")
 
-
+table(predicted)
+table(testing$Certified)

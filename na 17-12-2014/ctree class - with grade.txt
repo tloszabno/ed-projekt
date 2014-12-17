@@ -1,0 +1,23 @@
+> table(predicted)
+predicted
+     0      1 
+344132   9218 
+> table(testing$Certified)
+
+     0      1 
+344156   9194 
+
+9218/9194 = 1.0026
+
+
+bez grade:
+> table(predicted)
+predicted
+     0      1 
+347783   5567 
+> table(testing$Certified)
+
+     0      1 
+344156   9194 
+
+5567/9194 = 0.6055
